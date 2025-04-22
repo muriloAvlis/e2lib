@@ -34,3 +34,4 @@
 # Clion files
 *.xml
 cmake-build-debug
+.idea
