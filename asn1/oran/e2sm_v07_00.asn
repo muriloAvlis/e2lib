@@ -1,0 +1,47 @@
+-- ASN1START
+-- **************************************************************
+-- E2SM
+-- Information Element Definitions
+--
+-- **************************************************************
+E2SM-COMMON-IEs {
+iso(1) identified-organization(3) dod(6) internet(1) private(4) enterprise(1) 53148 e2(1) version1(1)
+e2sm(2) e2sm-COMMON-IEs(0)}
+DEFINITIONS AUTOMATIC TAGS ::=
+BEGIN
+-- --------------------------------------------------
+-- Constants
+-- --------------------------------------------------
+maxE1APid
+ INTEGER ::= 65535
+maxF1APid
+ INTEGER ::= 4
+-- IEs derived from 3GPP 36.423 (X2AP)
+maxEARFCN
+ INTEGER ::= 65535
+-- IEs derived from 3GPP 38.473 (F1AP)
+maxNRARFCN
+ INTEGER ::= 3279165
+maxnoofNrCellBands
+ INTEGER ::= 32
+-- IEs derived from 3GPP 38.331 (NR RRC)
+maxNrofSSBs-1
+ INTEGER ::= 63
+-- --------------------------------------------------
+-- E2SM Common IEs
+-- --------------------------------------------------
+Beam-ID ::= CHOICE {
+nR-Beam-ID
+ NR-SSB-Index,
+...
+}
+Cell-RNTI ::= SEQUENCE {
+c-RNTI
+cell-Global-ID
+...
+}
+CGI ::= CHOICE {
+nR-CGI
+eUTRA-CGI
+...
+}
