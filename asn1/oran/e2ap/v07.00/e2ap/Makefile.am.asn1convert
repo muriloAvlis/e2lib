@@ -1,0 +1,14 @@
+include e2ap/Makefile.am.libasncodec
+
+bin_PROGRAMS += asn1convert
+asn1convert_CFLAGS = $(ASN_MODULE_CFLAGS) 
+asn1convert_CPPFLAGS = -I$(top_srcdir)/-DASN_PDU_COLLECTION 
+asn1convert_LDADD = libasncodec.la
+asn1convert_SOURCES = \
+	e2ap/converter-example.c\
+	e2ap/pdu_collection.c
+regen: regenerate-from-asn1-source
+
+regenerate-from-asn1-source:
+	asn1c -fcompound-names -fincludes-quoted -fno-include-deps -findirect-choice -pdu=all -D e2ap E2AP-CommonDataTypes.asn E2AP-Constants.asn E2AP-Containers.asn E2AP-IEs.asn E2AP-PDU-Contents.asn E2AP-PDU-Descriptions.asn
+

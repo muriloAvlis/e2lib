@@ -1,0 +1,723 @@
+ASN_MODULE_SRCS=	\
+	e2ap/Criticality.c	\
+	e2ap/Presence.c	\
+	e2ap/ProcedureCode.c	\
+	e2ap/ProtocolIE-ID.c	\
+	e2ap/TriggeringMessage.c	\
+	e2ap/ProtocolIE-Container.c	\
+	e2ap/ProtocolIE-SingleContainer.c	\
+	e2ap/ProtocolIE-Field.c	\
+	e2ap/ProtocolIE-ContainerPair.c	\
+	e2ap/ProtocolIE-FieldPair.c	\
+	e2ap/ProtocolIE-ContainerList.c	\
+	e2ap/ProtocolIE-ContainerPairList.c	\
+	e2ap/AMFName.c	\
+	e2ap/Cause.c	\
+	e2ap/CauseE2node.c	\
+	e2ap/CauseMisc.c	\
+	e2ap/CauseProtocol.c	\
+	e2ap/CauseRICrequest.c	\
+	e2ap/CauseRICservice.c	\
+	e2ap/CauseServiceLayer.c	\
+	e2ap/CauseTransport.c	\
+	e2ap/CriticalityDiagnostics.c	\
+	e2ap/CriticalityDiagnostics-IE-List.c	\
+	e2ap/CriticalityDiagnostics-IE-Item.c	\
+	e2ap/E2nodeComponentConfiguration.c	\
+	e2ap/E2nodeComponentConfigurationAck.c	\
+	e2ap/E2nodeComponentInterfaceType.c	\
+	e2ap/E2nodeComponentID.c	\
+	e2ap/E2nodeComponentInterfaceE1.c	\
+	e2ap/E2nodeComponentInterfaceF1.c	\
+	e2ap/E2nodeComponentInterfaceNG.c	\
+	e2ap/E2nodeComponentInterfaceS1.c	\
+	e2ap/E2nodeComponentInterfaceX2.c	\
+	e2ap/E2nodeComponentInterfaceXn.c	\
+	e2ap/E2nodeComponentInterfaceW1.c	\
+	e2ap/ENB-ID.c	\
+	e2ap/ENB-ID-Choice.c	\
+	e2ap/ENGNB-ID.c	\
+	e2ap/GlobalE2node-ID.c	\
+	e2ap/GlobalE2node-en-gNB-ID.c	\
+	e2ap/GlobalE2node-eNB-ID.c	\
+	e2ap/GlobalE2node-gNB-ID.c	\
+	e2ap/GlobalE2node-ng-eNB-ID.c	\
+	e2ap/GlobalENB-ID.c	\
+	e2ap/GlobalenGNB-ID.c	\
+	e2ap/GlobalgNB-ID.c	\
+	e2ap/GlobalngeNB-ID.c	\
+	e2ap/GlobalNG-RANNode-ID.c	\
+	e2ap/GlobalRIC-ID.c	\
+	e2ap/GNB-CU-UP-ID.c	\
+	e2ap/GNB-DU-ID.c	\
+	e2ap/GNB-ID-Choice.c	\
+	e2ap/ListedRecordsOnly.c	\
+	e2ap/LoadMeasurementID.c	\
+	e2ap/MMEname.c	\
+	e2ap/NGENB-DU-ID.c	\
+	e2ap/PLMN-Identity.c	\
+	e2ap/RANfunctionDefinition.c	\
+	e2ap/RANfunctionID.c	\
+	e2ap/RANfunctionOID.c	\
+	e2ap/RANfunctionRevision.c	\
+	e2ap/RegistrationRequest.c	\
+	e2ap/ReportingPeriodicity.c	\
+	e2ap/RICactionDefinition.c	\
+	e2ap/RICactionExecutionOrder.c	\
+	e2ap/RICactionID.c	\
+	e2ap/RICactionType.c	\
+	e2ap/RICassistanceHeader.c	\
+	e2ap/RICassistanceMessage.c	\
+	e2ap/RICassistanceOutcome.c	\
+	e2ap/RICassistanceSN.c	\
+	e2ap/RICassistanceUpdate.c	\
+	e2ap/RICassistanceUpdateNumber.c	\
+	e2ap/RICcallProcessID.c	\
+	e2ap/RICcontrolAckRequest.c	\
+	e2ap/RICcontrolHeader.c	\
+	e2ap/RICcontrolMessage.c	\
+	e2ap/RICcontrolOutcome.c	\
+	e2ap/RICeventTriggerDefinition.c	\
+	e2ap/RICindicationHeader.c	\
+	e2ap/RICindicationMessage.c	\
+	e2ap/RICindicationSN.c	\
+	e2ap/RICindicationType.c	\
+	e2ap/RICloadConfirm.c	\
+	e2ap/RICloadInformation.c	\
+	e2ap/RICloadRequest.c	\
+	e2ap/RICrequestID.c	\
+	e2ap/RICserviceLoadConfirm.c	\
+	e2ap/RICserviceLoadInformation.c	\
+	e2ap/RICserviceLoadRequest.c	\
+	e2ap/RICsubscriptionTime.c	\
+	e2ap/RICsubsequentAction.c	\
+	e2ap/RICsubscriptionAuditFlag.c	\
+	e2ap/RICsubsequentActionType.c	\
+	e2ap/RICqueryHeader.c	\
+	e2ap/RICqueryDefinition.c	\
+	e2ap/RICqueryOutcome.c	\
+	e2ap/RICtimeToWait.c	\
+	e2ap/ServiceLayerCause.c	\
+	e2ap/TimeToWait.c	\
+	e2ap/TNLinformation.c	\
+	e2ap/TNLusage.c	\
+	e2ap/TransactionID.c	\
+	e2ap/TypeOfError.c	\
+	e2ap/RICsubscriptionRequest.c	\
+	e2ap/RICsubscriptionDetails.c	\
+	e2ap/RICactions-ToBeSetup-List.c	\
+	e2ap/RICaction-ToBeSetup-Item.c	\
+	e2ap/RICsubscriptionResponse.c	\
+	e2ap/RICaction-Admitted-List.c	\
+	e2ap/RICaction-Admitted-Item.c	\
+	e2ap/RICaction-NotAdmitted-List.c	\
+	e2ap/RICaction-NotAdmitted-Item.c	\
+	e2ap/RICsubscriptionFailure.c	\
+	e2ap/RICsubscriptionAuditRequest.c	\
+	e2ap/RICsubscriptionAuditList.c	\
+	e2ap/RICsubscriptionAudit-Item.c	\
+	e2ap/RICsubscriptionAuditResponse.c	\
+	e2ap/RICsubscriptionAuditActionList.c	\
+	e2ap/RICsubscriptionAuditAction-Item.c	\
+	e2ap/RICsubscriptionAuditFailure.c	\
+	e2ap/RICsubscriptionDeleteRequest.c	\
+	e2ap/RICsubscriptionDeleteResponse.c	\
+	e2ap/RICsubscriptionDeleteFailure.c	\
+	e2ap/RICsubscriptionDeleteRequired.c	\
+	e2ap/RICsubscription-List-withCause.c	\
+	e2ap/RICsubscription-withCause-Item.c	\
+	e2ap/RICsubscriptionModificationRequest.c	\
+	e2ap/RICactions-ToBeRemovedForModification-List.c	\
+	e2ap/RICaction-ToBeRemovedForModification-Item.c	\
+	e2ap/RICactions-ToBeModifiedForModification-List.c	\
+	e2ap/RICaction-ToBeModifiedForModification-Item.c	\
+	e2ap/RICactions-ToBeAddedForModification-List.c	\
+	e2ap/RICaction-ToBeAddedForModification-Item.c	\
+	e2ap/RICsubscriptionModificationResponse.c	\
+	e2ap/RICactions-RemovedForModification-List.c	\
+	e2ap/RICaction-RemovedForModification-Item.c	\
+	e2ap/RICactions-FailedToBeRemovedForModification-List.c	\
+	e2ap/RICaction-FailedToBeRemovedForModification-Item.c	\
+	e2ap/RICactions-ModifiedForModification-List.c	\
+	e2ap/RICaction-ModifiedForModification-Item.c	\
+	e2ap/RICactions-FailedToBeModifiedForModification-List.c	\
+	e2ap/RICaction-FailedToBeModifiedForModification-Item.c	\
+	e2ap/RICactions-AddedForModification-List.c	\
+	e2ap/RICaction-AddedForModification-Item.c	\
+	e2ap/RICactions-FailedToBeAddedForModification-List.c	\
+	e2ap/RICaction-FailedToBeAddedForModification-Item.c	\
+	e2ap/RICsubscriptionModificationFailure.c	\
+	e2ap/RICsubscriptionModificationRequired.c	\
+	e2ap/RICactions-RequiredToBeModified-List.c	\
+	e2ap/RICaction-RequiredToBeModified-Item.c	\
+	e2ap/RICactions-RequiredToBeRemoved-List.c	\
+	e2ap/RICaction-RequiredToBeRemoved-Item.c	\
+	e2ap/RICsubscriptionModificationConfirm.c	\
+	e2ap/RICactions-ConfirmedForModification-List.c	\
+	e2ap/RICaction-ConfirmedForModification-Item.c	\
+	e2ap/RICactions-RefusedToBeModified-List.c	\
+	e2ap/RICaction-RefusedToBeModified-Item.c	\
+	e2ap/RICactions-ConfirmedForRemoval-List.c	\
+	e2ap/RICaction-ConfirmedForRemoval-Item.c	\
+	e2ap/RICactions-RefusedToBeRemoved-List.c	\
+	e2ap/RICaction-RefusedToBeRemoved-Item.c	\
+	e2ap/RICsubscriptionModificationRefuse.c	\
+	e2ap/RICsubscriptionStateControlRequest.c	\
+	e2ap/RANfunctionStateControl-List.c	\
+	e2ap/RANfunctionStateControl-Item.c	\
+	e2ap/RICsubscriptionToBeSuspended-List.c	\
+	e2ap/RICsubscriptionToBeResumed-List.c	\
+	e2ap/RICsubscriptionList-Item.c	\
+	e2ap/RICaction-List.c	\
+	e2ap/RICactionList-Item.c	\
+	e2ap/RICsubscriptionStateControlResponse.c	\
+	e2ap/RANfunctionStateConfirm-List.c	\
+	e2ap/RANfunctionStateConfirm-Item.c	\
+	e2ap/RICsubscriptionSuspended-List.c	\
+	e2ap/RICsubscriptionResumed-List.c	\
+	e2ap/RICsubscriptionStateControlFailure.c	\
+	e2ap/RICassistanceRequest.c	\
+	e2ap/RICassistanceResponse.c	\
+	e2ap/RICassistanceFailure.c	\
+	e2ap/RICassistanceIndication.c	\
+	e2ap/RICassistanceHalt.c	\
+	e2ap/RICindication.c	\
+	e2ap/RICcontrolRequest.c	\
+	e2ap/RICcontrolAcknowledge.c	\
+	e2ap/RICcontrolFailure.c	\
+	e2ap/RICqueryRequest.c	\
+	e2ap/RICqueryResponse.c	\
+	e2ap/RICqueryFailure.c	\
+	e2ap/RICserviceLoadStatusRequest.c	\
+	e2ap/RANfunctionLoadRequest-List.c	\
+	e2ap/RANfunctionLoadRequest-Item.c	\
+	e2ap/RICsubscriptionLoadRequest-List.c	\
+	e2ap/RICsubscriptionLoadRequest-ItemIE.c	\
+	e2ap/RICactionLoadRequest-List.c	\
+	e2ap/RICactionLoadRequest-Item.c	\
+	e2ap/RICserviceLoadStatusResponse.c	\
+	e2ap/RANfunctionLoadConfirm-List.c	\
+	e2ap/RANfunctionLoadConfirm-Item.c	\
+	e2ap/RICsubscriptionLoadConfirm-List.c	\
+	e2ap/RICsubscriptionLoadConfirm-ItemIE.c	\
+	e2ap/RICactionLoadConfirm-List.c	\
+	e2ap/RICactionLoadConfirm-Item.c	\
+	e2ap/RICserviceLoadStatusFailure.c	\
+	e2ap/RICserviceLoadUpdate.c	\
+	e2ap/RANfunctionLoad-List.c	\
+	e2ap/RANfunctionLoad-Item.c	\
+	e2ap/RICsubscriptionLoad-List.c	\
+	e2ap/RICsubscriptionLoad-ItemIE.c	\
+	e2ap/RICactionLoad-List.c	\
+	e2ap/RICactionLoad-Item.c	\
+	e2ap/ErrorIndication.c	\
+	e2ap/E2setupRequest.c	\
+	e2ap/E2setupResponse.c	\
+	e2ap/E2setupFailure.c	\
+	e2ap/E2connectionUpdate.c	\
+	e2ap/E2connectionUpdate-List.c	\
+	e2ap/E2connectionUpdate-Item.c	\
+	e2ap/E2connectionUpdateRemove-List.c	\
+	e2ap/E2connectionUpdateRemove-Item.c	\
+	e2ap/E2connectionUpdateAcknowledge.c	\
+	e2ap/E2connectionSetupFailed-List.c	\
+	e2ap/E2connectionSetupFailed-Item.c	\
+	e2ap/E2connectionUpdateFailure.c	\
+	e2ap/E2nodeConfigurationUpdate.c	\
+	e2ap/E2nodeComponentConfigAddition-List.c	\
+	e2ap/E2nodeComponentConfigAddition-Item.c	\
+	e2ap/E2nodeComponentConfigUpdate-List.c	\
+	e2ap/E2nodeComponentConfigUpdate-Item.c	\
+	e2ap/E2nodeComponentConfigRemoval-List.c	\
+	e2ap/E2nodeComponentConfigRemoval-Item.c	\
+	e2ap/E2nodeTNLassociationRemoval-List.c	\
+	e2ap/E2nodeTNLassociationRemoval-Item.c	\
+	e2ap/E2nodeConfigurationUpdateAcknowledge.c	\
+	e2ap/E2nodeComponentConfigAdditionAck-List.c	\
+	e2ap/E2nodeComponentConfigAdditionAck-Item.c	\
+	e2ap/E2nodeComponentConfigUpdateAck-List.c	\
+	e2ap/E2nodeComponentConfigUpdateAck-Item.c	\
+	e2ap/E2nodeComponentConfigRemovalAck-List.c	\
+	e2ap/E2nodeComponentConfigRemovalAck-Item.c	\
+	e2ap/E2nodeConfigurationUpdateFailure.c	\
+	e2ap/ResetRequest.c	\
+	e2ap/ResetResponse.c	\
+	e2ap/RICserviceUpdate.c	\
+	e2ap/RANfunctions-List.c	\
+	e2ap/RANfunction-Item.c	\
+	e2ap/RANfunctionsID-List.c	\
+	e2ap/RANfunctionID-Item.c	\
+	e2ap/RICserviceUpdateAcknowledge.c	\
+	e2ap/RANfunctionsIDcause-List.c	\
+	e2ap/RANfunctionIDcause-Item.c	\
+	e2ap/RICserviceUpdateFailure.c	\
+	e2ap/RICserviceQuery.c	\
+	e2ap/E2RemovalRequest.c	\
+	e2ap/E2RemovalResponse.c	\
+	e2ap/E2RemovalFailure.c	\
+	e2ap/E2AP-PDU.c	\
+	e2ap/InitiatingMessage.c	\
+	e2ap/SuccessfulOutcome.c	\
+	e2ap/UnsuccessfulOutcome.c	\
+	e2ap/EXTERNAL.c
+
+ASN_MODULE_HDRS=	\
+	e2ap/Criticality.h	\
+	e2ap/Presence.h	\
+	e2ap/ProcedureCode.h	\
+	e2ap/ProtocolIE-ID.h	\
+	e2ap/TriggeringMessage.h	\
+	e2ap/ProtocolIE-Container.h	\
+	e2ap/ProtocolIE-SingleContainer.h	\
+	e2ap/ProtocolIE-Field.h	\
+	e2ap/ProtocolIE-ContainerPair.h	\
+	e2ap/ProtocolIE-FieldPair.h	\
+	e2ap/ProtocolIE-ContainerList.h	\
+	e2ap/ProtocolIE-ContainerPairList.h	\
+	e2ap/AMFName.h	\
+	e2ap/Cause.h	\
+	e2ap/CauseE2node.h	\
+	e2ap/CauseMisc.h	\
+	e2ap/CauseProtocol.h	\
+	e2ap/CauseRICrequest.h	\
+	e2ap/CauseRICservice.h	\
+	e2ap/CauseServiceLayer.h	\
+	e2ap/CauseTransport.h	\
+	e2ap/CriticalityDiagnostics.h	\
+	e2ap/CriticalityDiagnostics-IE-List.h	\
+	e2ap/CriticalityDiagnostics-IE-Item.h	\
+	e2ap/E2nodeComponentConfiguration.h	\
+	e2ap/E2nodeComponentConfigurationAck.h	\
+	e2ap/E2nodeComponentInterfaceType.h	\
+	e2ap/E2nodeComponentID.h	\
+	e2ap/E2nodeComponentInterfaceE1.h	\
+	e2ap/E2nodeComponentInterfaceF1.h	\
+	e2ap/E2nodeComponentInterfaceNG.h	\
+	e2ap/E2nodeComponentInterfaceS1.h	\
+	e2ap/E2nodeComponentInterfaceX2.h	\
+	e2ap/E2nodeComponentInterfaceXn.h	\
+	e2ap/E2nodeComponentInterfaceW1.h	\
+	e2ap/ENB-ID.h	\
+	e2ap/ENB-ID-Choice.h	\
+	e2ap/ENGNB-ID.h	\
+	e2ap/GlobalE2node-ID.h	\
+	e2ap/GlobalE2node-en-gNB-ID.h	\
+	e2ap/GlobalE2node-eNB-ID.h	\
+	e2ap/GlobalE2node-gNB-ID.h	\
+	e2ap/GlobalE2node-ng-eNB-ID.h	\
+	e2ap/GlobalENB-ID.h	\
+	e2ap/GlobalenGNB-ID.h	\
+	e2ap/GlobalgNB-ID.h	\
+	e2ap/GlobalngeNB-ID.h	\
+	e2ap/GlobalNG-RANNode-ID.h	\
+	e2ap/GlobalRIC-ID.h	\
+	e2ap/GNB-CU-UP-ID.h	\
+	e2ap/GNB-DU-ID.h	\
+	e2ap/GNB-ID-Choice.h	\
+	e2ap/ListedRecordsOnly.h	\
+	e2ap/LoadMeasurementID.h	\
+	e2ap/MMEname.h	\
+	e2ap/NGENB-DU-ID.h	\
+	e2ap/PLMN-Identity.h	\
+	e2ap/RANfunctionDefinition.h	\
+	e2ap/RANfunctionID.h	\
+	e2ap/RANfunctionOID.h	\
+	e2ap/RANfunctionRevision.h	\
+	e2ap/RegistrationRequest.h	\
+	e2ap/ReportingPeriodicity.h	\
+	e2ap/RICactionDefinition.h	\
+	e2ap/RICactionExecutionOrder.h	\
+	e2ap/RICactionID.h	\
+	e2ap/RICactionType.h	\
+	e2ap/RICassistanceHeader.h	\
+	e2ap/RICassistanceMessage.h	\
+	e2ap/RICassistanceOutcome.h	\
+	e2ap/RICassistanceSN.h	\
+	e2ap/RICassistanceUpdate.h	\
+	e2ap/RICassistanceUpdateNumber.h	\
+	e2ap/RICcallProcessID.h	\
+	e2ap/RICcontrolAckRequest.h	\
+	e2ap/RICcontrolHeader.h	\
+	e2ap/RICcontrolMessage.h	\
+	e2ap/RICcontrolOutcome.h	\
+	e2ap/RICeventTriggerDefinition.h	\
+	e2ap/RICindicationHeader.h	\
+	e2ap/RICindicationMessage.h	\
+	e2ap/RICindicationSN.h	\
+	e2ap/RICindicationType.h	\
+	e2ap/RICloadConfirm.h	\
+	e2ap/RICloadInformation.h	\
+	e2ap/RICloadRequest.h	\
+	e2ap/RICrequestID.h	\
+	e2ap/RICserviceLoadConfirm.h	\
+	e2ap/RICserviceLoadInformation.h	\
+	e2ap/RICserviceLoadRequest.h	\
+	e2ap/RICsubscriptionTime.h	\
+	e2ap/RICsubsequentAction.h	\
+	e2ap/RICsubscriptionAuditFlag.h	\
+	e2ap/RICsubsequentActionType.h	\
+	e2ap/RICqueryHeader.h	\
+	e2ap/RICqueryDefinition.h	\
+	e2ap/RICqueryOutcome.h	\
+	e2ap/RICtimeToWait.h	\
+	e2ap/ServiceLayerCause.h	\
+	e2ap/TimeToWait.h	\
+	e2ap/TNLinformation.h	\
+	e2ap/TNLusage.h	\
+	e2ap/TransactionID.h	\
+	e2ap/TypeOfError.h	\
+	e2ap/RICsubscriptionRequest.h	\
+	e2ap/RICsubscriptionDetails.h	\
+	e2ap/RICactions-ToBeSetup-List.h	\
+	e2ap/RICaction-ToBeSetup-Item.h	\
+	e2ap/RICsubscriptionResponse.h	\
+	e2ap/RICaction-Admitted-List.h	\
+	e2ap/RICaction-Admitted-Item.h	\
+	e2ap/RICaction-NotAdmitted-List.h	\
+	e2ap/RICaction-NotAdmitted-Item.h	\
+	e2ap/RICsubscriptionFailure.h	\
+	e2ap/RICsubscriptionAuditRequest.h	\
+	e2ap/RICsubscriptionAuditList.h	\
+	e2ap/RICsubscriptionAudit-Item.h	\
+	e2ap/RICsubscriptionAuditResponse.h	\
+	e2ap/RICsubscriptionAuditActionList.h	\
+	e2ap/RICsubscriptionAuditAction-Item.h	\
+	e2ap/RICsubscriptionAuditFailure.h	\
+	e2ap/RICsubscriptionDeleteRequest.h	\
+	e2ap/RICsubscriptionDeleteResponse.h	\
+	e2ap/RICsubscriptionDeleteFailure.h	\
+	e2ap/RICsubscriptionDeleteRequired.h	\
+	e2ap/RICsubscription-List-withCause.h	\
+	e2ap/RICsubscription-withCause-Item.h	\
+	e2ap/RICsubscriptionModificationRequest.h	\
+	e2ap/RICactions-ToBeRemovedForModification-List.h	\
+	e2ap/RICaction-ToBeRemovedForModification-Item.h	\
+	e2ap/RICactions-ToBeModifiedForModification-List.h	\
+	e2ap/RICaction-ToBeModifiedForModification-Item.h	\
+	e2ap/RICactions-ToBeAddedForModification-List.h	\
+	e2ap/RICaction-ToBeAddedForModification-Item.h	\
+	e2ap/RICsubscriptionModificationResponse.h	\
+	e2ap/RICactions-RemovedForModification-List.h	\
+	e2ap/RICaction-RemovedForModification-Item.h	\
+	e2ap/RICactions-FailedToBeRemovedForModification-List.h	\
+	e2ap/RICaction-FailedToBeRemovedForModification-Item.h	\
+	e2ap/RICactions-ModifiedForModification-List.h	\
+	e2ap/RICaction-ModifiedForModification-Item.h	\
+	e2ap/RICactions-FailedToBeModifiedForModification-List.h	\
+	e2ap/RICaction-FailedToBeModifiedForModification-Item.h	\
+	e2ap/RICactions-AddedForModification-List.h	\
+	e2ap/RICaction-AddedForModification-Item.h	\
+	e2ap/RICactions-FailedToBeAddedForModification-List.h	\
+	e2ap/RICaction-FailedToBeAddedForModification-Item.h	\
+	e2ap/RICsubscriptionModificationFailure.h	\
+	e2ap/RICsubscriptionModificationRequired.h	\
+	e2ap/RICactions-RequiredToBeModified-List.h	\
+	e2ap/RICaction-RequiredToBeModified-Item.h	\
+	e2ap/RICactions-RequiredToBeRemoved-List.h	\
+	e2ap/RICaction-RequiredToBeRemoved-Item.h	\
+	e2ap/RICsubscriptionModificationConfirm.h	\
+	e2ap/RICactions-ConfirmedForModification-List.h	\
+	e2ap/RICaction-ConfirmedForModification-Item.h	\
+	e2ap/RICactions-RefusedToBeModified-List.h	\
+	e2ap/RICaction-RefusedToBeModified-Item.h	\
+	e2ap/RICactions-ConfirmedForRemoval-List.h	\
+	e2ap/RICaction-ConfirmedForRemoval-Item.h	\
+	e2ap/RICactions-RefusedToBeRemoved-List.h	\
+	e2ap/RICaction-RefusedToBeRemoved-Item.h	\
+	e2ap/RICsubscriptionModificationRefuse.h	\
+	e2ap/RICsubscriptionStateControlRequest.h	\
+	e2ap/RANfunctionStateControl-List.h	\
+	e2ap/RANfunctionStateControl-Item.h	\
+	e2ap/RICsubscriptionToBeSuspended-List.h	\
+	e2ap/RICsubscriptionToBeResumed-List.h	\
+	e2ap/RICsubscriptionList-Item.h	\
+	e2ap/RICaction-List.h	\
+	e2ap/RICactionList-Item.h	\
+	e2ap/RICsubscriptionStateControlResponse.h	\
+	e2ap/RANfunctionStateConfirm-List.h	\
+	e2ap/RANfunctionStateConfirm-Item.h	\
+	e2ap/RICsubscriptionSuspended-List.h	\
+	e2ap/RICsubscriptionResumed-List.h	\
+	e2ap/RICsubscriptionStateControlFailure.h	\
+	e2ap/RICassistanceRequest.h	\
+	e2ap/RICassistanceResponse.h	\
+	e2ap/RICassistanceFailure.h	\
+	e2ap/RICassistanceIndication.h	\
+	e2ap/RICassistanceHalt.h	\
+	e2ap/RICindication.h	\
+	e2ap/RICcontrolRequest.h	\
+	e2ap/RICcontrolAcknowledge.h	\
+	e2ap/RICcontrolFailure.h	\
+	e2ap/RICqueryRequest.h	\
+	e2ap/RICqueryResponse.h	\
+	e2ap/RICqueryFailure.h	\
+	e2ap/RICserviceLoadStatusRequest.h	\
+	e2ap/RANfunctionLoadRequest-List.h	\
+	e2ap/RANfunctionLoadRequest-Item.h	\
+	e2ap/RICsubscriptionLoadRequest-List.h	\
+	e2ap/RICsubscriptionLoadRequest-ItemIE.h	\
+	e2ap/RICactionLoadRequest-List.h	\
+	e2ap/RICactionLoadRequest-Item.h	\
+	e2ap/RICserviceLoadStatusResponse.h	\
+	e2ap/RANfunctionLoadConfirm-List.h	\
+	e2ap/RANfunctionLoadConfirm-Item.h	\
+	e2ap/RICsubscriptionLoadConfirm-List.h	\
+	e2ap/RICsubscriptionLoadConfirm-ItemIE.h	\
+	e2ap/RICactionLoadConfirm-List.h	\
+	e2ap/RICactionLoadConfirm-Item.h	\
+	e2ap/RICserviceLoadStatusFailure.h	\
+	e2ap/RICserviceLoadUpdate.h	\
+	e2ap/RANfunctionLoad-List.h	\
+	e2ap/RANfunctionLoad-Item.h	\
+	e2ap/RICsubscriptionLoad-List.h	\
+	e2ap/RICsubscriptionLoad-ItemIE.h	\
+	e2ap/RICactionLoad-List.h	\
+	e2ap/RICactionLoad-Item.h	\
+	e2ap/ErrorIndication.h	\
+	e2ap/E2setupRequest.h	\
+	e2ap/E2setupResponse.h	\
+	e2ap/E2setupFailure.h	\
+	e2ap/E2connectionUpdate.h	\
+	e2ap/E2connectionUpdate-List.h	\
+	e2ap/E2connectionUpdate-Item.h	\
+	e2ap/E2connectionUpdateRemove-List.h	\
+	e2ap/E2connectionUpdateRemove-Item.h	\
+	e2ap/E2connectionUpdateAcknowledge.h	\
+	e2ap/E2connectionSetupFailed-List.h	\
+	e2ap/E2connectionSetupFailed-Item.h	\
+	e2ap/E2connectionUpdateFailure.h	\
+	e2ap/E2nodeConfigurationUpdate.h	\
+	e2ap/E2nodeComponentConfigAddition-List.h	\
+	e2ap/E2nodeComponentConfigAddition-Item.h	\
+	e2ap/E2nodeComponentConfigUpdate-List.h	\
+	e2ap/E2nodeComponentConfigUpdate-Item.h	\
+	e2ap/E2nodeComponentConfigRemoval-List.h	\
+	e2ap/E2nodeComponentConfigRemoval-Item.h	\
+	e2ap/E2nodeTNLassociationRemoval-List.h	\
+	e2ap/E2nodeTNLassociationRemoval-Item.h	\
+	e2ap/E2nodeConfigurationUpdateAcknowledge.h	\
+	e2ap/E2nodeComponentConfigAdditionAck-List.h	\
+	e2ap/E2nodeComponentConfigAdditionAck-Item.h	\
+	e2ap/E2nodeComponentConfigUpdateAck-List.h	\
+	e2ap/E2nodeComponentConfigUpdateAck-Item.h	\
+	e2ap/E2nodeComponentConfigRemovalAck-List.h	\
+	e2ap/E2nodeComponentConfigRemovalAck-Item.h	\
+	e2ap/E2nodeConfigurationUpdateFailure.h	\
+	e2ap/ResetRequest.h	\
+	e2ap/ResetResponse.h	\
+	e2ap/RICserviceUpdate.h	\
+	e2ap/RANfunctions-List.h	\
+	e2ap/RANfunction-Item.h	\
+	e2ap/RANfunctionsID-List.h	\
+	e2ap/RANfunctionID-Item.h	\
+	e2ap/RICserviceUpdateAcknowledge.h	\
+	e2ap/RANfunctionsIDcause-List.h	\
+	e2ap/RANfunctionIDcause-Item.h	\
+	e2ap/RICserviceUpdateFailure.h	\
+	e2ap/RICserviceQuery.h	\
+	e2ap/E2RemovalRequest.h	\
+	e2ap/E2RemovalResponse.h	\
+	e2ap/E2RemovalFailure.h	\
+	e2ap/E2AP-PDU.h	\
+	e2ap/InitiatingMessage.h	\
+	e2ap/SuccessfulOutcome.h	\
+	e2ap/UnsuccessfulOutcome.h	\
+	e2ap/EXTERNAL.h
+
+ASN_MODULE_HDRS+=e2ap/ANY.h
+ASN_MODULE_SRCS+=e2ap/ANY.c
+ASN_MODULE_HDRS+=e2ap/OCTET_STRING.h
+ASN_MODULE_HDRS+=e2ap/OPEN_TYPE.h
+ASN_MODULE_SRCS+=e2ap/OPEN_TYPE.c
+ASN_MODULE_HDRS+=e2ap/constr_CHOICE.h
+ASN_MODULE_HDRS+=e2ap/ENUMERATED.h
+ASN_MODULE_SRCS+=e2ap/ENUMERATED.c
+ASN_MODULE_HDRS+=e2ap/INTEGER.h
+ASN_MODULE_HDRS+=e2ap/NativeEnumerated.h
+ASN_MODULE_HDRS+=e2ap/GraphicString.h
+ASN_MODULE_SRCS+=e2ap/GraphicString.c
+ASN_MODULE_SRCS+=e2ap/INTEGER.c
+ASN_MODULE_SRCS+=e2ap/NativeEnumerated.c
+ASN_MODULE_HDRS+=e2ap/NativeInteger.h
+ASN_MODULE_SRCS+=e2ap/NativeInteger.c
+ASN_MODULE_HDRS+=e2ap/OBJECT_IDENTIFIER.h
+ASN_MODULE_SRCS+=e2ap/OBJECT_IDENTIFIER.c
+ASN_MODULE_HDRS+=e2ap/asn_codecs_prim.h
+ASN_MODULE_HDRS+=e2ap/ObjectDescriptor.h
+ASN_MODULE_SRCS+=e2ap/ObjectDescriptor.c
+ASN_MODULE_HDRS+=e2ap/PrintableString.h
+ASN_MODULE_SRCS+=e2ap/PrintableString.c
+ASN_MODULE_HDRS+=e2ap/asn_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=e2ap/asn_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=e2ap/asn_SET_OF.h
+ASN_MODULE_SRCS+=e2ap/asn_SET_OF.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE.c
+ASN_MODULE_HDRS+=e2ap/constr_SEQUENCE.h
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE.c
+ASN_MODULE_HDRS+=e2ap/constr_SEQUENCE_OF.h
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_OF.c
+ASN_MODULE_HDRS+=e2ap/constr_SET_OF.h
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF.c
+ASN_MODULE_HDRS+=e2ap/asn_application.h
+ASN_MODULE_SRCS+=e2ap/asn_application.c
+ASN_MODULE_HDRS+=e2ap/asn_ioc.h
+ASN_MODULE_HDRS+=e2ap/asn_system.h
+ASN_MODULE_HDRS+=e2ap/asn_codecs.h
+ASN_MODULE_HDRS+=e2ap/asn_internal.h
+ASN_MODULE_SRCS+=e2ap/asn_internal.c
+ASN_MODULE_HDRS+=e2ap/asn_bit_data.h
+ASN_MODULE_SRCS+=e2ap/asn_bit_data.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING.c
+ASN_MODULE_HDRS+=e2ap/BIT_STRING.h
+ASN_MODULE_SRCS+=e2ap/BIT_STRING.c
+ASN_MODULE_SRCS+=e2ap/asn_codecs_prim.c
+ASN_MODULE_HDRS+=e2ap/ber_tlv_length.h
+ASN_MODULE_SRCS+=e2ap/ber_tlv_length.c
+ASN_MODULE_HDRS+=e2ap/ber_tlv_tag.h
+ASN_MODULE_SRCS+=e2ap/ber_tlv_tag.c
+ASN_MODULE_HDRS+=e2ap/constr_TYPE.h
+ASN_MODULE_SRCS+=e2ap/constr_TYPE.c
+ASN_MODULE_HDRS+=e2ap/constraints.h
+ASN_MODULE_SRCS+=e2ap/constraints.c
+ASN_MODULE_HDRS+=e2ap/ber_decoder.h
+ASN_MODULE_HDRS+=e2ap/der_encoder.h
+ASN_MODULE_SRCS+=e2ap/ber_decoder.c
+ASN_MODULE_SRCS+=e2ap/der_encoder.c
+ASN_MODULE_SRCS+=e2ap/ANY_ber.c
+ASN_MODULE_SRCS+=e2ap/INTEGER_ber.c
+ASN_MODULE_SRCS+=e2ap/NativeInteger_ber.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING_ber.c
+ASN_MODULE_SRCS+=e2ap/OPEN_TYPE_ber.c
+ASN_MODULE_SRCS+=e2ap/asn_codecs_prim_ber.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE_ber.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_OF_ber.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_ber.c
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF_ber.c
+ASN_MODULE_HDRS+=e2ap/xer_support.h
+ASN_MODULE_HDRS+=e2ap/xer_decoder.h
+ASN_MODULE_HDRS+=e2ap/xer_encoder.h
+ASN_MODULE_SRCS+=e2ap/xer_support.c
+ASN_MODULE_SRCS+=e2ap/xer_decoder.c
+ASN_MODULE_SRCS+=e2ap/xer_encoder.c
+ASN_MODULE_SRCS+=e2ap/ANY_xer.c
+ASN_MODULE_SRCS+=e2ap/BIT_STRING_xer.c
+ASN_MODULE_SRCS+=e2ap/INTEGER_xer.c
+ASN_MODULE_SRCS+=e2ap/NativeEnumerated_xer.c
+ASN_MODULE_SRCS+=e2ap/NativeInteger_xer.c
+ASN_MODULE_SRCS+=e2ap/OBJECT_IDENTIFIER_xer.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING_xer.c
+ASN_MODULE_SRCS+=e2ap/OPEN_TYPE_xer.c
+ASN_MODULE_SRCS+=e2ap/asn_codecs_prim_xer.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE_xer.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_OF_xer.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_xer.c
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF_xer.c
+ASN_MODULE_HDRS+=e2ap/oer_decoder.h
+ASN_MODULE_HDRS+=e2ap/oer_encoder.h
+ASN_MODULE_HDRS+=e2ap/oer_support.h
+ASN_MODULE_SRCS+=e2ap/oer_decoder.c
+ASN_MODULE_SRCS+=e2ap/oer_encoder.c
+ASN_MODULE_SRCS+=e2ap/oer_support.c
+ASN_MODULE_SRCS+=e2ap/OPEN_TYPE_oer.c
+ASN_MODULE_SRCS+=e2ap/INTEGER_oer.c
+ASN_MODULE_SRCS+=e2ap/BIT_STRING_oer.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING_oer.c
+ASN_MODULE_SRCS+=e2ap/NativeInteger_oer.c
+ASN_MODULE_SRCS+=e2ap/NativeEnumerated_oer.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE_oer.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_oer.c
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF_oer.c
+ASN_MODULE_SRCS+=e2ap/ENUMERATED_oer.c
+ASN_MODULE_HDRS+=e2ap/per_decoder.h
+ASN_MODULE_HDRS+=e2ap/per_encoder.h
+ASN_MODULE_HDRS+=e2ap/per_support.h
+ASN_MODULE_HDRS+=e2ap/per_opentype.h
+ASN_MODULE_SRCS+=e2ap/per_decoder.c
+ASN_MODULE_SRCS+=e2ap/per_encoder.c
+ASN_MODULE_SRCS+=e2ap/per_support.c
+ASN_MODULE_SRCS+=e2ap/per_opentype.c
+ASN_MODULE_HDRS+=e2ap/uper_decoder.h
+ASN_MODULE_HDRS+=e2ap/uper_encoder.h
+ASN_MODULE_HDRS+=e2ap/uper_support.h
+ASN_MODULE_HDRS+=e2ap/uper_opentype.h
+ASN_MODULE_SRCS+=e2ap/uper_decoder.c
+ASN_MODULE_SRCS+=e2ap/uper_encoder.c
+ASN_MODULE_SRCS+=e2ap/uper_support.c
+ASN_MODULE_SRCS+=e2ap/uper_opentype.c
+ASN_MODULE_SRCS+=e2ap/ANY_uper.c
+ASN_MODULE_SRCS+=e2ap/BIT_STRING_uper.c
+ASN_MODULE_SRCS+=e2ap/ENUMERATED_uper.c
+ASN_MODULE_SRCS+=e2ap/INTEGER_uper.c
+ASN_MODULE_SRCS+=e2ap/NativeEnumerated_uper.c
+ASN_MODULE_SRCS+=e2ap/NativeInteger_uper.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING_uper.c
+ASN_MODULE_SRCS+=e2ap/OPEN_TYPE_uper.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE_uper.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_OF_uper.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_uper.c
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF_uper.c
+ASN_MODULE_HDRS+=e2ap/aper_decoder.h
+ASN_MODULE_HDRS+=e2ap/aper_encoder.h
+ASN_MODULE_HDRS+=e2ap/aper_support.h
+ASN_MODULE_HDRS+=e2ap/aper_opentype.h
+ASN_MODULE_SRCS+=e2ap/aper_decoder.c
+ASN_MODULE_SRCS+=e2ap/aper_encoder.c
+ASN_MODULE_SRCS+=e2ap/aper_support.c
+ASN_MODULE_SRCS+=e2ap/aper_opentype.c
+ASN_MODULE_SRCS+=e2ap/ANY_aper.c
+ASN_MODULE_SRCS+=e2ap/ENUMERATED_aper.c
+ASN_MODULE_SRCS+=e2ap/INTEGER_aper.c
+ASN_MODULE_SRCS+=e2ap/NativeEnumerated_aper.c
+ASN_MODULE_SRCS+=e2ap/NativeInteger_aper.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING_aper.c
+ASN_MODULE_SRCS+=e2ap/OPEN_TYPE_aper.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE_aper.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_OF_aper.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_aper.c
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF_aper.c
+ASN_MODULE_SRCS+=e2ap/BIT_STRING_print.c
+ASN_MODULE_SRCS+=e2ap/INTEGER_print.c
+ASN_MODULE_SRCS+=e2ap/NativeInteger_print.c
+ASN_MODULE_SRCS+=e2ap/OBJECT_IDENTIFIER_print.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING_print.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE_print.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_print.c
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF_print.c
+ASN_MODULE_HDRS+=e2ap/asn_random_fill.h
+ASN_MODULE_SRCS+=e2ap/asn_random_fill.c
+ASN_MODULE_SRCS+=e2ap/BIT_STRING_rfill.c
+ASN_MODULE_SRCS+=e2ap/INTEGER_rfill.c
+ASN_MODULE_SRCS+=e2ap/NativeInteger_rfill.c
+ASN_MODULE_SRCS+=e2ap/OBJECT_IDENTIFIER_rfill.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING_rfill.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE_rfill.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_rfill.c
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF_rfill.c
+ASN_MODULE_HDRS+=e2ap/jer_support.h
+ASN_MODULE_HDRS+=e2ap/jer_decoder.h
+ASN_MODULE_HDRS+=e2ap/jer_encoder.h
+ASN_MODULE_SRCS+=e2ap/jer_support.c
+ASN_MODULE_SRCS+=e2ap/jer_decoder.c
+ASN_MODULE_SRCS+=e2ap/jer_encoder.c
+ASN_MODULE_SRCS+=e2ap/ANY_jer.c
+ASN_MODULE_SRCS+=e2ap/BIT_STRING_jer.c
+ASN_MODULE_SRCS+=e2ap/ENUMERATED_jer.c
+ASN_MODULE_SRCS+=e2ap/INTEGER_jer.c
+ASN_MODULE_SRCS+=e2ap/NativeEnumerated_jer.c
+ASN_MODULE_SRCS+=e2ap/NativeInteger_jer.c
+ASN_MODULE_SRCS+=e2ap/OBJECT_IDENTIFIER_jer.c
+ASN_MODULE_SRCS+=e2ap/OCTET_STRING_jer.c
+ASN_MODULE_SRCS+=e2ap/OPEN_TYPE_jer.c
+ASN_MODULE_SRCS+=e2ap/asn_codecs_prim_jer.c
+ASN_MODULE_SRCS+=e2ap/constr_CHOICE_jer.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_OF_jer.c
+ASN_MODULE_SRCS+=e2ap/constr_SEQUENCE_jer.c
+ASN_MODULE_SRCS+=e2ap/constr_SET_OF_jer.c
+
+ASN_MODULE_CFLAGS=
+
+lib_LTLIBRARIES+=libasncodec.la
+libasncodec_la_SOURCES=$(ASN_MODULE_SRCS) $(ASN_MODULE_HDRS)
+libasncodec_la_CPPFLAGS=-I$(top_srcdir)/e2ap/
+libasncodec_la_CFLAGS=$(ASN_MODULE_CFLAGS)
+libasncodec_la_LDFLAGS=-lm

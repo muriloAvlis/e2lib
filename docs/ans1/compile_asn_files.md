@@ -13,7 +13,8 @@ asn1c -fcompound-names -fincludes-quoted -fno-include-deps -findirect-choice -D 
 ### Example with E2SM-KPM asn files
 
 ```shell
-asn1c -fcompound-names -fincludes-quoted -fno-include-deps -findirect-choice -pdu=all -D ../../../lib/oran/e2sm/kpm E2SM-v07.00.asn E2SM-KPM-v06.00.asn
+cd asn1/oran/e2sm
+asn1c -fcompound-names -fincludes-quoted -fno-include-deps -findirect-choice -pdu=all -D kpm E2SM-v07.00.asn E2SM-KPM-v06.00.asn
 ```
 
 ## Rewrite converter-example.c

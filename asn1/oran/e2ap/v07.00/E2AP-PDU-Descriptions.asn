@@ -32,7 +32,8 @@ IMPORTS
 --
 -- **************************************************************
 E2AP-ELEMENTARY-PROCEDURE ::= CLASS {
-    &InitiatingMessage &SuccessfulOutcome OPTIONAL,
+    &InitiatingMessage,
+    &SuccessfulOutcome OPTIONAL,
     &UnsuccessfulOutcome OPTIONAL,
     &procedureCode ProcedureCode UNIQUE,
     &criticality   Criticality DEFAULT ignore
