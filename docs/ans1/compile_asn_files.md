@@ -4,8 +4,16 @@
 
 - [asn1c](https://github.com/mouse07410/asn1c)
 
+## Building C files
+
 ```sh
-asn1c -gen-PER -fcompound-names -fincludes-quoted -fno-include-deps -findirect-choice <asn-files>
+asn1c -fcompound-names -fincludes-quoted -fno-include-deps -findirect-choice -D <target-dir> <asn-files>
+```
+
+### Example with E2SM-KPM asn files
+
+```shell
+asn1c -fcompound-names -fincludes-quoted -fno-include-deps -findirect-choice -pdu=all -D ../../../lib/oran/e2sm/kpm E2SM-v07.00.asn E2SM-KPM-v06.00.asn
 ```
 
 ## Rewrite converter-example.c

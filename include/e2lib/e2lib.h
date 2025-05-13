@@ -5,10 +5,8 @@
 #ifndef E2LIB_H
 #define E2LIB_H
 
-class E2lib {
-  void encodeASN();
-  void DecodeASN();
-};
+void encode() {}
 
+void decode() {}
 
 #endif //E2LIB_H

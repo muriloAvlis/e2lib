@@ -1,16 +1,16 @@
 include(FetchContent)
-# Download GoogleTest remote lib
+# Download Cmocka remote lib
 FetchContent_Declare(
         googletest
-        GIT_REPOSITORY https://github.com/google/googletest
-        GIT_TAG v1.16.0
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG        v1.17.0
 )
 FetchContent_MakeAvailable(googletest)
 
 # Test exec
 add_executable(e2lib_tests test_main.cpp)
 
-# Gtest link
+# Cmocka link
 target_link_libraries(e2lib_tests
         PRIVATE
         e2lib
@@ -18,7 +18,6 @@ target_link_libraries(e2lib_tests
         gtest_main
 )
 
-# Habilita o sistema de testes
+# Enable test system
 enable_testing()
-include(GoogleTest)
-gtest_discover_tests(e2lib_tests)
+add_test(NAME test_encoder COMMAND test_encoder)
