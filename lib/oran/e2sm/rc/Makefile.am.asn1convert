@@ -1,0 +1,14 @@
+include ../../../lib/oran/e2sm/rc/Makefile.am.libasncodec
+
+bin_PROGRAMS += asn1convert
+asn1convert_CFLAGS = $(ASN_MODULE_CFLAGS) 
+asn1convert_CPPFLAGS = -I$(top_srcdir)/-DASN_PDU_COLLECTION 
+asn1convert_LDADD = libasncodec.la
+asn1convert_SOURCES = \
+	../../../lib/oran/e2sm/rc/converter-example.c\
+	../../../lib/oran/e2sm/rc/pdu_collection.c
+regen: regenerate-from-asn1-source
+
+regenerate-from-asn1-source:
+	asn1c -fcompound-names -fincludes-quoted -fno-include-deps -findirect-choice -pdu=all -D ../../../lib/oran/e2sm/rc E2SM-v07.00.asn E2SM-RC-v06.00.asn
+
